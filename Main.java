@@ -26,25 +26,25 @@ class Main {
 
     // actual calculation methods below
     int time = 0;
-    double balance = initAmt * Math.pow((1 + (intRate / 100) / cuantoComb), cuantoComb * years);
-
-    double interest = initAmt * Math.pow((1 + (intRate / 100) / cuantoComb), cuantoComb * years) - initAmt;
 
     // actual calculation methods above
-    
+
     while (time <= years) {
+      double balance = initAmt * Math.pow((1 + (intRate / 100) / cuantoComb), cuantoComb * time);
 
-      System.out.println("After " + time + " years, you will have accumulated $");
+      double interest = initAmt * Math.pow((1 + (intRate / 100) / cuantoComb), cuantoComb * time) - initAmt;
 
-      System.out.printf("%.2f", interest);
+      System.out.print("After " + time + " years, you will have accumulated \n $");
 
-      System.out.println(" in interest, making your balance $");
+      System.out.printf("%.2f",interest);
 
-      System.out.printf("%.2f", balance);
+      System.out.print(" in interest, making your balance \n");
+
+      System.out.printf("%.2f",balance);
 
       time++;
 
-      System.out.println("Press enter to see next year's account stats");
+      System.out.println("\n Press enter to see next year's account stats");
 
       try {
         System.in.read();
