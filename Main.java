@@ -16,19 +16,15 @@ class Main {
     // actual calculation methods below
     double balance = Math.pow(initAmt * (1 + (intRate * 100) / cuantoComb), cuantoComb * time);
     double interest = Math.pow(initAmt * (1 + (intRate * 100) / cuantoComb), cuantoComb * time) - initAmt;
-    balance = balance / 100;
-    interest = interest / 100;
     // actual calculation methods above
     while (time <= 10) {
 
       System.out.println("After " + (11 - time) + " years, you will have accumulated $");
-      interest = Math.round(interest * 100);
 
-      System.out.println(interest/ 100);
+      System.out.println(interest);
       System.out.println(" in interest, making your balance $");
-      balance = Math.round(balance * 100);
 
-      System.out.println(balance / 100);
+      System.out.println(balance);
       time++;
       System.out.println("Press enter to see next year's account stats");
       try {
