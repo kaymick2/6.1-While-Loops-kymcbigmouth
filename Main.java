@@ -4,32 +4,37 @@ class Main {
   public static void main(String[] args) {
 
     Scanner userInput = new Scanner(System.in);
+    int initAmt = 0;
+    int intRate = 0;
+    int cuantoComb = 0;
+    int years = 0;
 
     System.out.println("Please input the amount of money you want to calculate interest on (Principal)");
 
-    double initAmt = userInput.nextDouble();
+    initAmt = userInput.nextInt();
     System.out.println("Now input the interest rate as a percentage. ex. enter \"5\" if the interest rate is 5%");
 
-    double intRate = userInput.nextDouble();
+    intRate = userInput.nextInt();
 
     System.out.println("How many times per year will it be compounded?");
 
-    double cuantoComb = userInput.nextDouble();
+    cuantoComb = userInput.nextInt();
 
     System.out.println("For how many years?");
 
-    double time = userInput.nextDouble();
+    years = userInput.nextInt();
 
     // actual calculation methods below
+    int time = 0;
+    double balance = Math.pow(initAmt * (1 + (intRate / 100) / cuantoComb), cuantoComb * years);
 
-    double balance = Math.pow(initAmt * (1 + (intRate * 100) / cuantoComb), cuantoComb * time);
-    double interest = Math.pow(initAmt * (1 + (intRate * 100) / cuantoComb), cuantoComb * time) - initAmt;
+    double interest = Math.pow(initAmt * (1 + (intRate / 100) / cuantoComb), cuantoComb * years) - initAmt;
 
     // actual calculation methods above
+    
+    while (time <= years) {
 
-    while (time <= 10) {
-
-      System.out.println("After " + (11 - time) + " years, you will have accumulated $");
+      System.out.println("After " + time + " years, you will have accumulated $");
 
       System.out.printf("%.2f", interest);
 
@@ -42,9 +47,7 @@ class Main {
       System.out.println("Press enter to see next year's account stats");
 
       try {
-
         System.in.read();
-
       } catch (Exception e) {
       }
     }
