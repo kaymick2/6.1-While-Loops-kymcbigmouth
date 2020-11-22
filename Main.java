@@ -26,9 +26,9 @@ class Main {
 
     // actual calculation methods below
     int time = 0;
-    double balance = Math.pow(initAmt * (1 + (intRate / 100) / cuantoComb), cuantoComb * years);
+    double balance = initAmt * Math.pow((1 + (intRate / 100) / cuantoComb), cuantoComb * years);
 
-    double interest = Math.pow(initAmt * (1 + (intRate / 100) / cuantoComb), cuantoComb * years) - initAmt;
+    double interest = initAmt * Math.pow((1 + (intRate / 100) / cuantoComb), cuantoComb * years) - initAmt;
 
     // actual calculation methods above
     
