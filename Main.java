@@ -4,25 +4,25 @@ class Main {
   public static void main(String[] args) {
 
     Scanner userInput = new Scanner(System.in);
-    int initAmt = 0;
-    int intRate = 0;
-    int cuantoComb = 0;
-    int years = 0;
+    double initAmt = 0;
+    double intRate = 0;
+    double cuantoComb = 0;
+    double years = 0;
 
     System.out.println("Please input the amount of money you want to calculate interest on (Principal)");
 
-    initAmt = userInput.nextInt();
+    initAmt = userInput.nextDouble();
     System.out.println("Now input the interest rate as a percentage. ex. enter \"5\" if the interest rate is 5%");
 
-    intRate = userInput.nextInt();
+    intRate = userInput.nextDouble();
 
     System.out.println("How many times per year will it be compounded?");
 
-    cuantoComb = userInput.nextInt();
+    cuantoComb = userInput.nextDouble();
 
     System.out.println("For how many years?");
 
-    years = userInput.nextInt();
+    years = userInput.nextDouble();
 
     // actual calculation methods below
     int time = 0;
